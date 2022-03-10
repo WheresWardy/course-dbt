@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_events
+    columns:
+      - name: event_id
+      - name: session_id
+      - name: user_id
+      - name: event_type
+      - name: page_url
+      - name: created_at
+    
+  - name: stg_users
+    columns:
+      - name: user_id
+      - name: first_name
+      - name: last_name
+      - name: email
+      - name: phone_number
+      - name: created_at
+      - name: updated_at
+      - name: address_id

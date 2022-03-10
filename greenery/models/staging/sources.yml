@@ -17,13 +17,6 @@ sources:
 
     tables:
       - name: events
-        loaded_at_field: created_at
-        description: Contains events
-
       - name: orders
-        loaded_at_field: created_at
-        description: Contains order data
-
+      - name: order_items
       - name: users
-        loaded_at_field: created_at
-        description: Contains users
