@@ -1,0 +1,9 @@
+FROM postgres:14.2-alpine
+
+ADD init.sql /docker-entrypoint-initdb.d/init.sql
+ADD load.sh /docker-entrypoint-initdb.d/load.sh
+ADD data/*.csv /dbt/data/
+
+RUN adduser -D -h /home/gitpod -s /bin/bash gitpod
+
+ENV POSTGRES_PASSWORD=gitpod
