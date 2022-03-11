@@ -44,6 +44,8 @@ Install dbt for postgres and requirements:
 bash pip-install-dbt.sh
 ```
 
+Ensure the contents of `dbt.profiles.yml` are added to ~/.dbt/profiles.yml
+
 ### psql
 
 Ensure the search path includes the `dbt_matt_w` schema (possibly by adding to ~/.psqlrc):
