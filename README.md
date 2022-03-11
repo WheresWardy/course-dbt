@@ -36,8 +36,10 @@ Setup the virtualenv:
 ```
 python3 -m venv .venv
 .venv/bin/pip install --upgrade pip
+```
 
 Install dbt for postgres and requirements:
+
 ```
 bash pip-install-dbt.sh
 ```
