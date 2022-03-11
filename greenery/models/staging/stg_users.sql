@@ -1,5 +1,11 @@
+{{ config(materialized = 'view') }}
 
-WITH users AS (
+WITH source AS (
+    SELECT *
+    FROM {{ source('greenery_db', 'users') }}
+),
+
+renamed_recast AS (
     SELECT
         user_id AS user_guid,
         first_name,
@@ -9,8 +15,7 @@ WITH users AS (
         created_at,
         updated_at,
         address_id
-    FROM {{ source('greenery_db', 'users') }}
+    FROM source
 )
 
-SELECT *
-FROM users
+SELECT * FROM renamed_recast
