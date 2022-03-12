@@ -16,7 +16,10 @@ sources:
       error_after: {count: 48, period: hour}
 
     tables:
+      - name: addresses
       - name: events
-      - name: orders
       - name: order_items
+      - name: orders
+      - name: products
+      - name: promos
       - name: users

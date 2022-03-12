@@ -1,6 +1,14 @@
 version: 2
 
 models:
+  - name: stg_addresses
+    columns:
+      - name: address_id
+      - name: address
+      - name: zipcode
+      - name: state
+      - name: country
+
   - name: stg_events
     columns:
       - name: event_id
@@ -9,6 +17,41 @@ models:
       - name: event_type
       - name: page_url
       - name: created_at
+
+  - name: stg_order_items
+    columns:
+      - name: order_id
+      - name: product_id
+      - name: quantity
+
+  - name: stg_orders
+    columns:
+      - name: order_id
+      - name: user_id
+      - name: promo_id
+      - name: address_id
+      - name: created_at
+      - name: order_cost
+      - name: shipping_cost
+      - name: order_total
+      - name: tracking_id
+      - name: shipping_service
+      - name: estimated_delivery_at
+      - name: delivered_at
+      - name: status
+
+  - name: stg_products
+    columns:
+      - name: product_id
+      - name: name
+      - name: price
+      - name: inventory
+
+  - name: stg_promos
+    columns:
+      - name: promo_id
+      - name: discount
+      - name: status
     
   - name: stg_users
     columns:
