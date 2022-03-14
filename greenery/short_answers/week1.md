@@ -7,7 +7,7 @@
 Query:
 ```sql
 SELECT COUNT(*)
-FROM stg_users;
+FROM dbt_matt_w.stg_users;
 ```
 
 ### 2. On average, how many orders do we receive per hour?
@@ -20,7 +20,7 @@ WITH orders_per_hour AS (
     SELECT
         COUNT(DISTINCT order_id) AS order_count,
         DATE_TRUNC('hour', created_at) AS order_hour
-    FROM stg_orders
+    FROM dbt_matt_w.stg_orders
     GROUP BY order_hour
 )
 
@@ -35,7 +35,7 @@ FROM orders_per_hour;
 Query:
 ```sql
 SELECT AVG(delivered_at - created_at) AS avg_order_delivery
-FROM stg_orders
+FROM dbt_matt_w.stg_orders
 WHERE status = 'delivered'
     AND delivered_at IS NOT NULL;
 ```
@@ -54,7 +54,7 @@ WITH user_orders AS (
     SELECT
         user_id,
         COUNT(order_id) AS orders
-    FROM stg_orders
+    FROM dbt_matt_w.stg_orders
     GROUP BY user_id
 )
 
@@ -79,7 +79,7 @@ WITH sessions_per_hour AS (
     SELECT
         COUNT(DISTINCT session_id) AS session_count,
         DATE_TRUNC('hour', created_at) AS session_hour
-    FROM stg_events
+    FROM dbt_matt_w.stg_events
     GROUP BY session_hour
 )
 
