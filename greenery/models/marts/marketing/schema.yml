@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: fact_user_orders
+    description: Users combined with order information
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - user_id
+            - order_id

@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: Users combined with address information
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique
+
+  - name: fact_orders
+    description: Orders combined with line item order information
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - order_id
+            - product_id
