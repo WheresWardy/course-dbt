@@ -156,6 +156,39 @@ models:
       - name: status
         description: Is the promo code active or disabled
 
+  - name: stg_superheroes
+    description: A list of superhoes and their attributes
+    columns:
+      - name: id
+        description: Id of the superhero in the database
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: Name of the superhero
+      - name: gender
+        description: Gender of the superhero
+      - name: eye_color
+        description: Eyecolor of the superhero
+      - name: race
+        description: Race of the superhero
+      - name: hair_color
+        description: Hair color of the superhero
+      - name: height
+        description: height of the superhero
+      - name: publisher
+        description: publisher / comic brand that created the superhero
+      - name: skin_color
+        description: Skin color of the superhero
+      - name: alignment
+        description: Alignment of the superhero
+      - name: weight
+        description: Weight of the superhero
+      - name: created_at
+        description: Timestamp when this record was created
+      - name: updated_at
+        description: Timestamp of last update
+
   - name: stg_users
     description: User registration data for the site
     columns:
