@@ -5,3 +5,5 @@ GRANT ALL PRIVILEGES ON DATABASE dbt TO gitpod;
 
 CREATE SCHEMA dbt_matt_w;
 GRANT ALL PRIVILEGES ON SCHEMA dbt_matt_w TO gitpod;
+
+CREATE ROLE reporting;

@@ -22,3 +22,11 @@ target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
+
+models:
+  greenery:
+    post-hook:
+      - "{{ grant_select(role='reporting') }}"
+
+on-run-end:
+  - "{{ grant_usage(role='reporting') }}"
